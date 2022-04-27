@@ -3,8 +3,8 @@
 int main()
 {
     ApplicationSettings settings;
-    
-    // settings.LoadConfig("test.config");
+
+    // settings.LoadConfig("config.yaml");
 
     Application app;
 

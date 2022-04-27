@@ -1,0 +1,12 @@
+Scene: New Scene
+Entities:
+  - name: stormtrooper
+    model: Assets/Models/Stormtrooper/scene.gltf
+  - name: tiger1
+    model: Assets/Models/tiger1/scene.gltf
+  - name: sponza
+    model: Assets/Models/sponza/scene.gltf
+  - name: mask
+    model: Assets/Models/mask/scene.gltf
+  - name: helmet
+    model: Assets/Models/corinthian_helmet/scene.gltf

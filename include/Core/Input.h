@@ -20,9 +20,8 @@ public:
 
 	static float GetMouseX();
 	static float GetMouseY();
+	static float GetMouseScrollDelta();
 	static void GetMousePos(float* x, float* y);
-
-	static void SetMode(int mode, int value);
 
 private:
 	Input() {}

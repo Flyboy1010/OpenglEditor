@@ -1,5 +1,6 @@
 #include "Core/EditorCamera.h"
 #include "Core/Input.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 EditorCamera::EditorCamera()
 {
@@ -19,6 +20,7 @@ EditorCamera::EditorCamera()
 	m_viewportWidth = 1280, m_viewportHeight = 720;
 
 	m_lastMousePosition = { 0.0f, 0.0f };
+	m_using = false;
 }
 
 void EditorCamera::SetViewport(float width, float height)
@@ -44,6 +46,8 @@ void EditorCamera::Update(float delta)
 		glm::vec2 mouse = { Input::GetMouseX(), Input::GetMouseY() };
 		glm::vec2 delta = mouse - m_lastMousePosition;
 		m_lastMousePosition = mouse;
+		float mouseScrollDelta = Input::GetMouseScrollDelta();
+		m_using = true;
 
 		if (Input::MouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
 		{
@@ -64,17 +68,23 @@ void EditorCamera::Update(float delta)
 
 			m_focalPoint += (delta.x * m_right - delta.y * m_up) * sensitivity;
 		}
-		else if (Input::MouseButtonPressed(GLFW_MOUSE_BUTTON_MIDDLE))
+		else if (mouseScrollDelta != 0)
 		{
 			/* ZOOMING */
 
-			const float sensitivity = 0.1f;
+			const float sensitivity = 1.0f;
 
-			m_distance += delta.y * sensitivity;
+			m_distance -= mouseScrollDelta * sensitivity;
 
 			if (m_distance < 0.1f)
 				m_distance = 0.1f;
 		}
+	}
+	else
+	{
+		// the camera is not moving
+
+		m_using = false;
 	}
 
 	/* CALCULATE VECTORS */

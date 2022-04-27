@@ -86,17 +86,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\include;C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>26812;</DisableSpecificWarnings>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\box2d-main\build\bin\Release;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;box2d.lib;assimp-vc143-mt.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\build\Debug;C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;assimp-vc143-mt.lib;Opengl32.lib;yaml-cppd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,9 +105,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\include;C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>26812;</DisableSpecificWarnings>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -116,25 +116,25 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\box2d-main\build\bin\Release;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;box2d.lib;assimp-vc143-mt.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\build\Release;C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;assimp-vc143-mt.lib;Opengl32.lib;yaml-cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\include;C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>26812;</DisableSpecificWarnings>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\box2d-main\build\bin\Release;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;box2d.lib;assimp-vc143-mt.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\build\Debug;C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;assimp-vc143-mt.lib;Opengl32.lib;yaml-cppd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,9 +143,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;YAML_CPP_STATIC_DEFINE</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\include;C:\Users\5davi\Desktop\David\SDK\assimp-master\include;C:\Users\5davi\Desktop\David\SDK\box2d-main\include;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\include;C:\Users\5davi\Desktop\David\ProyectosCpp\Opengl\OpenglTests\vendor;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>26812;</DisableSpecificWarnings>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -154,29 +154,31 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\box2d-main\build\bin\Release;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;box2d.lib;assimp-vc143-mt.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\5davi\Desktop\David\SDK\yaml-cpp\build\Release;C:\Users\5davi\Desktop\David\SDK\assimp-master\lib\Release;C:\Users\5davi\Desktop\David\SDK\glew-2.1.0\lib\Release\x64;C:\Users\5davi\Desktop\David\SDK\glfw-3.3.6.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;assimp-vc143-mt.lib;Opengl32.lib;yaml-cpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.h" />
-    <ClInclude Include="include\Core\Camera.h" />
+    <ClInclude Include="include\Core\AssetsManager.h" />
     <ClInclude Include="include\Core\Core.h" />
-    <ClInclude Include="include\Core\Editor.h" />
+    <ClInclude Include="include\Editor\Editor.h" />
     <ClInclude Include="include\Core\EditorCamera.h" />
-    <ClInclude Include="include\Core\Gfx\Framebuffer.h" />
-    <ClInclude Include="include\Core\Gfx\IndexBuffer.h" />
-    <ClInclude Include="include\Core\Gfx\Shader.h" />
-    <ClInclude Include="include\Core\Gfx\Texture.h" />
-    <ClInclude Include="include\Core\Gfx\VertexArray.h" />
-    <ClInclude Include="include\Core\Gfx\VertexBuffer.h" />
+    <ClInclude Include="include\Core\Renderer\Framebuffer.h" />
+    <ClInclude Include="include\Core\Renderer\Shader.h" />
+    <ClInclude Include="include\Core\Renderer\Texture.h" />
+    <ClInclude Include="include\Core\Renderer\VertexArray.h" />
+    <ClInclude Include="include\Core\Renderer\Buffer.h" />
     <ClInclude Include="include\Core\Input.h" />
-    <ClInclude Include="include\Core\Logger.h" />
-    <ClInclude Include="include\Core\Model.h" />
+    <ClInclude Include="include\Core\Debug\Logger.h" />
+    <ClInclude Include="include\Core\Renderer\Model.h" />
     <ClInclude Include="include\Core\OrthoCamera.h" />
-    <ClInclude Include="include\Core\Renderer.h" />
+    <ClInclude Include="include\Core\Debug\Profiler.h" />
+    <ClInclude Include="include\Core\Renderer\Renderer.h" />
+    <ClInclude Include="include\Scene\Scene.h" />
+    <ClInclude Include="include\Scene\SceneSerializer.h" />
     <ClInclude Include="include\Core\ThreadPool.h" />
-    <ClInclude Include="Shaders\model.vert" />
+    <ClInclude Include="Assets\Shaders\model.vert" />
     <ClInclude Include="vendor\Imguizmo\ImCurveEdit.h" />
     <ClInclude Include="vendor\Imguizmo\ImGradient.h" />
     <ClInclude Include="vendor\Imguizmo\ImGuizmo.h" />
@@ -193,20 +195,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Core\Camera.cpp" />
-    <ClCompile Include="src\Core\Editor.cpp" />
+    <ClCompile Include="src\Core\AssetsManager.cpp" />
+    <ClCompile Include="src\Editor\Editor.cpp" />
     <ClCompile Include="src\Core\EditorCamera.cpp" />
-    <ClCompile Include="src\Core\Gfx\Framebuffer.cpp" />
-    <ClCompile Include="src\Core\Gfx\IndexBuffer.cpp" />
-    <ClCompile Include="src\Core\Gfx\Shader.cpp" />
-    <ClCompile Include="src\Core\Gfx\Texture.cpp" />
-    <ClCompile Include="src\Core\Gfx\VertexArray.cpp" />
-    <ClCompile Include="src\Core\Gfx\VertexBuffer.cpp" />
+    <ClCompile Include="src\Core\Renderer\Framebuffer.cpp" />
+    <ClCompile Include="src\Core\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Core\Renderer\Texture.cpp" />
+    <ClCompile Include="src\Core\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Core\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
-    <ClCompile Include="src\Core\Logger.cpp" />
-    <ClCompile Include="src\Core\Model.cpp" />
+    <ClCompile Include="src\Core\Debug\Logger.cpp" />
+    <ClCompile Include="src\Core\Renderer\Model.cpp" />
     <ClCompile Include="src\Core\OrthoCamera.cpp" />
-    <ClCompile Include="src\Core\Renderer.cpp" />
+    <ClCompile Include="src\Core\Debug\Profiler.cpp" />
+    <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Scene\Scene.cpp" />
+    <ClCompile Include="src\Scene\SceneSerializer.cpp" />
     <ClCompile Include="src\Core\ThreadPool.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="vendor\Imguizmo\ImCurveEdit.cpp" />
@@ -224,16 +228,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <None Include="Shaders\lines.frag" />
-    <None Include="Shaders\lines.vert" />
-    <None Include="Shaders\model.frag" />
-    <None Include="Shaders\modelPBR.frag" />
-    <None Include="Shaders\modelPBR.vert" />
-    <None Include="Shaders\quads.frag" />
-    <None Include="Shaders\quads.vert" />
-    <None Include="Shaders\scale2x.frag" />
-    <None Include="Shaders\scale3x.frag" />
-    <None Include="Shaders\scale4x.frag" />
+    <None Include="Assets\Shaders\lines.frag" />
+    <None Include="Assets\Shaders\lines.vert" />
+    <None Include="Assets\Shaders\model.frag" />
+    <None Include="Assets\Shaders\modelPBR.frag" />
+    <None Include="Assets\Shaders\modelPBR.vert" />
+    <None Include="Assets\Shaders\modelPBR2.vert" />
+    <None Include="Assets\Shaders\PBR.glsl" />
+    <None Include="Assets\Shaders\quads.frag" />
+    <None Include="Assets\Shaders\quads.vert" />
+    <None Include="Assets\Shaders\scale2x.frag" />
+    <None Include="Assets\Shaders\scale3x.frag" />
+    <None Include="Assets\Shaders\scale4x.frag" />
+    <None Include="Assets\Shaders\shadowMap.frag" />
+    <None Include="Assets\Shaders\shadowMap.vert" />
+    <None Include="Assets\Shaders\modelPBR2.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

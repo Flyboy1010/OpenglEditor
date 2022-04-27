@@ -1,10 +1,7 @@
 #pragma once
 
 #include "Core/Core.h"
-#include "Core/Editor.h"
-#include <memory>
-#include "Core/Model.h"
-#include "Core/Camera.h"
+#include "Editor/Editor.h"
 
 struct ApplicationSettings
 {

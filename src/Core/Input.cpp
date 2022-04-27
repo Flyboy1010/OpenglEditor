@@ -13,6 +13,8 @@ static bool buttons[NUM_MOUSE_BUTTONS];
 static float mouseX;
 static float mouseY;
 
+static float mouseScrollDelta;
+
 static GLFWwindow* windowPtr;
 
 static void KeyCallback(GLFWwindow* window, int key, int scanCode, int action, int mods)
@@ -34,13 +36,17 @@ static void MouseButtonCallback(GLFWwindow* window, int button, int action, int 
 	buttons[button] = (action != GLFW_RELEASE);
 }
 
+static void MouseScrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	mouseScrollDelta = yoffset;
+}
+
 void Input::SetFocusWindow(GLFWwindow* window)
 {
 	glfwSetKeyCallback(window, KeyCallback);
-
 	glfwSetCursorPosCallback(window, CursorPositionCallback);
-
 	glfwSetMouseButtonCallback(window, MouseButtonCallback);
+	glfwSetScrollCallback(window, MouseScrollCallback);
 
 	windowPtr = window;
 }
@@ -49,6 +55,7 @@ void Input::Update()
 {
 	memcpy(keysOld, keys, NUM_KEYS);
 	memcpy(buttonsOld, buttons, NUM_MOUSE_BUTTONS);
+	mouseScrollDelta = 0;
 }
 
 bool Input::KeyPressed(int key)
@@ -101,13 +108,13 @@ float Input::GetMouseY()
 	return mouseY;
 }
 
+float Input::GetMouseScrollDelta()
+{
+	return mouseScrollDelta;
+}
+
 void Input::GetMousePos(float* x, float* y)
 {
 	*x = mouseX;
 	*y = mouseY;
-}
-
-void Input::SetMode(int mode, int value)
-{
-	glfwSetInputMode(windowPtr, mode, value);
 }

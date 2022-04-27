@@ -1,7 +1,9 @@
 #include "Application.h"
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "Core/Input.h"
+#include <yaml-cpp/yaml.h>
 
 /* APPLICATION CONFIG */
 
@@ -15,25 +17,43 @@ ApplicationSettings::ApplicationSettings()
 
 void ApplicationSettings::SaveConfig(const std::string& path)
 {
-	std::ofstream config_file(path, std::ios::binary);
+	YAML::Emitter out;
 
-	config_file.write((char*)this, sizeof(ApplicationSettings));
+	out << YAML::BeginMap;
+	out << YAML::Key << "Window" << YAML::Value << YAML::BeginMap; // window properties
+	out << YAML::Key << "width" << YAML::Value << windowWidth;
+	out << YAML::Key << "height" << YAML::Value << windowHeight;
+	out << YAML::Key << "vsync" << YAML::Value << vsync;
+	out << YAML::Key << "fullscreen" << YAML::Value << fullscreen;
+	out << YAML::EndMap; // end window properties
+	out << YAML::EndMap;
 
-	config_file.close();
+	std::ofstream file(path);
+	file << out.c_str();
 }
 
 void ApplicationSettings::LoadConfig(const std::string& path)
 {
-	std::ifstream config_file(path, std::ios::binary);
+	std::ifstream file(path);
+	std::stringstream ss;
+	ss << file.rdbuf();
+	file.close();
 
-	if (config_file.is_open())
+	// root node
+
+	YAML::Node root = YAML::Load(ss.str());
+
+	// window node
+
+	auto window = root["Window"];
+
+	if (window)
 	{
-		config_file.read((char*)this, sizeof(ApplicationSettings));
-
-		config_file.close();
+		windowWidth = window["width"].as<int>();
+		windowHeight = window["height"].as<int>();
+		vsync = window["vsync"].as<bool>();
+		fullscreen = window["fullscreen"].as<bool>();
 	}
-	else
-		std::cout << "Can't open " << path << std::endl;
 }
 
 /* APPLICATION */
@@ -103,16 +123,16 @@ int Application::Init(const ApplicationSettings& settings)
 
 	// display renderer info
 
-	std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
-	std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
-	std::cout << "Version: " << glGetString(GL_VERSION) << std::endl;
+	LOG_INFO("Renderer: %s", glGetString(GL_RENDERER));
+	LOG_INFO("Vendor: %s", glGetString(GL_VENDOR));
+	LOG_INFO("Version: %s", glGetString(GL_VERSION));
 
 	/* IMGUI INIT */
 
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO();
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable; // Enable Dockings
-	io.FontDefault = io.Fonts->AddFontFromFileTTF("Fonts/FiraCode.ttf", 20.0f);
+	io.FontDefault = io.Fonts->AddFontFromFileTTF("Assets/Fonts/FiraCode.ttf", 20.0f);
 	ImGui_ImplGlfw_InitForOpenGL(m_window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 	ImGui::StyleColorsDark();
@@ -243,7 +263,7 @@ void Application::Render()
 
 	// render imgui
 
-	m_editor.ImGuiRender();
+	m_editor.RenderImGui();
 
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -297,12 +317,12 @@ void Application::Run()
 
 		// get the fps
 
-		float fps = 1 / delta;
+		//float fps = 1 / delta;
 
-		char text[30];
-		snprintf(text, 30, "Game Title, %.2f fps", fps);
+		//char text[30];
+		//snprintf(text, 30, "Game Title, %.2f fps", fps);
 
-		glfwSetWindowTitle(m_window, text);
+		//glfwSetWindowTitle(m_window, text);
 	}
 }
 

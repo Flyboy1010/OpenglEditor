@@ -1,7 +1,6 @@
 #pragma once
 
 #include <glm/glm.hpp>
-#include <glm/gtc/quaternion.hpp>
 
 class EditorCamera
 {
@@ -11,6 +10,7 @@ public:
 	const glm::vec3& GetPosition() const { return m_position; }
 	const glm::mat4& GetTransform() const { return m_transform; }
 	const glm::mat4& GetProjection() const { return m_projection; }
+	bool IsUsing() const { return m_using; }
 
 	void SetViewport(float width, float height);
 
@@ -36,4 +36,5 @@ private:
 	float m_viewportWidth, m_viewportHeight;
 
 	glm::vec2 m_lastMousePosition;
+	bool m_using;
 };
